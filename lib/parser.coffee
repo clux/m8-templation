@@ -4,18 +4,23 @@ fsx     = require 'fsx'
 version = require './domain/version'
 
 
-Parser = (@template_dir, @ext='.html', @key='versions', @domain='template') ->
+Parser = (@template_dir, @o={}) ->
+  throw new Error("need a valid template directory #{@template_dir}") if !path.existsSync(@template_dir)
+  @o.ext    or= '.html'
+  @o.domain or= 'template'
+  @o.key    or= 'versions'
+  return
 
 Parser::data = ->
   vobj = {}
-  for file in fsx.readDirSync(@template_dir).files when path.extname(file) is @ext
+  for file in fsx.readDirSync(@template_dir).files when path.extname(file) is @o.ext
     v = version.read(fs.readFileSync(file))
     throw new Error("path: #{file} does not start with a valid version number") if !v
-    vobj[path.basename(file).split(@ext)[0]] = v
-  JSON.stringify(vobj)
+    vobj[path.basename(file).split(@o.ext)[0]] = v
+  [@o.key, JSON.stringify(vobj)]
 
 Parser::domains = ->
-  [@domain, __dirname+'/domain/'] # make tinysemver requireable as template::version on the client
+  [@o.domain, __dirname+'/domain/'] # make tinysemver requireable as template::version on the client
 
 
 
