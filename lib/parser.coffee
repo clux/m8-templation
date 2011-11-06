@@ -1,7 +1,7 @@
 path    = require 'path'
 fs      = require 'fs'
 fsx     = require 'fsx'
-version = require './domain/version'
+vcs     = require './domain/vcs'
 
 
 Parser = (@template_dir, @o={}) ->
@@ -14,13 +14,13 @@ Parser = (@template_dir, @o={}) ->
 Parser::data = ->
   vobj = {}
   for file in fsx.readDirSync(@template_dir).files when path.extname(file) is @o.ext
-    v = version.read(fs.readFileSync(file))
+    v = vcs.version(fs.readFileSync(file))
     throw new Error("path: #{file} does not start with a valid version number") if !v
     vobj[path.basename(file).split(@o.ext)[0]] = v
   [@o.key, JSON.stringify(vobj)]
 
-Parser::domains = ->
-  [@o.domain, __dirname+'/domain/'] # make tinysemver requireable as template::version on the client
+Parser::domain = ->
+  [@o.domain, __dirname+'/domain/'] # makes vcs requirable as template::vcs
 
 
 

@@ -7,9 +7,13 @@ gt = (a, b) ->
 gte = (a, b) ->
   @gt(a,b) or @eq(a,b)
 
-read = (str) ->
+
+version = (str) ->
   v = new String(str).match(/^(\d+)\.(\d+)\.(\d+)/)   # very strict: wont even allow whitespace before version
   return false if !v or v.length isnt 4
   v[1..].map((n) -> parseInt(n,10))
 
-module.exports = {eq, gt, gte, read}
+template = (str) ->
+  str.replace(/^.*\n/,"")
+
+module.exports = {eq, gt, gte, version, template}
