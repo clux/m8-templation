@@ -12,11 +12,11 @@ For web applications on the other hand, rendering happens entirely on the client
 ## Usage
 Install with
 
-    $ npm install m8-template-vcs
+    $ npm install m8-templation
 
 then require, and pass it to modul8
 
-    var TemplateVcs = require('m8-template-vcs')
+    var TemplateVcs = require('m8-templation')
     modul8('./client/app.js')
       .use(new TemplateVcs('./directory/'))
       .compile('./out.js')

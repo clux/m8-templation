@@ -1,7 +1,7 @@
 {
   "author": "Eirik Albrigtsen <analsandblaster@gmail.com>",
-  "name": "modul8-tmplver",
-  "description": "Template version plugin for modul8 to get simplified version control for external templates on the client",
+  "name": "m8-TemplateVCS",
+  "description": "Simple Template Version Control System plugin for web application templates on the client via modul8",
   "version": "0.0.0",
   "repository": {
     "url": ""
