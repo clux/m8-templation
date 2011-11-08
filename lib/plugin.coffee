@@ -17,7 +17,7 @@ Plugin::data = ->
     v = vcs.version(fs.readFileSync(file))
     throw new Error("path: #{file} does not start with a valid version number") if !v
     vobj[path.basename(file).split(@o.ext)[0]] = v
-  [@o.key, JSON.stringify(vobj)]
+  [@o.key, vobj]
 
 Plugin::domain = ->
   [@o.domain, __dirname+'/domain/'] # makes vcs requirable as template::vcs
