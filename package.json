@@ -1,10 +1,11 @@
 {
   "author": "Eirik Albrigtsen <analsandblaster@gmail.com>",
-  "name": "m8-TemplateVCS",
-  "description": "Simple Template Version Control System plugin for web application templates on the client via modul8",
-  "version": "0.0.0",
+  "name": "m8-templation",
+  "description": "Simple template version control system plugin for web applications using modul8",
+  "version": "0.1.0",
   "repository": {
-    "url": ""
+    "type": "git",
+    "url": "git://github.com/clux/m8-templation.git"
   },
   "main": "index.js",
   "engines": {
