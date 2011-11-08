@@ -1,5 +1,5 @@
 #Template VCS for modul8
-modul8-tmplver is a simple version control system for web application templates relying on [modul8](https://github.com/clux/modul8) for deployment.
+m8-templation is a simple version control system for web application templates relying on [modul8](https://github.com/clux/modul8) for deployment.
 
 If a web application wants to store all the templates used by the application in localStorage, then they can become out of date with the server.
 This module allows these templates to always stay in sync with the server by bundling the current server versions of the templates and some helper methods to compare them.
