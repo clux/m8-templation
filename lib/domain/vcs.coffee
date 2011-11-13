@@ -7,7 +7,7 @@ gt = (a, b) ->
 gte = (a, b) ->
   @gt(a,b) or @eq(a,b)
 
-
+# parsers
 version = (str) ->
   v = new String(str).match(/^(\d+)\.(\d+)\.(\d+)/)   # very strict: wont even allow whitespace before version
   return false if !v or v.length isnt 4
@@ -16,4 +16,7 @@ version = (str) ->
 template = (str) ->
   str.replace(/^.*\n/,"")
 
-module.exports = {eq, gt, gte, version, template}
+parse = (str) ->
+  [version(str), template(str)]
+
+module.exports = {eq, gt, gte, parse, version, template}
