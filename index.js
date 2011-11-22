@@ -1,3 +1,1 @@
-require('coffee-script');
-
-module.exports = require('./lib/plugin.coffee');
+exports.Plugin = require('./lib/plugin.coffee');

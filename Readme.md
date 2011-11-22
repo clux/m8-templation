@@ -18,13 +18,13 @@ then require, and pass it to modul8
 
     var Templation = require('m8-templation')
     modul8('./client/app.js')
-      .use(new Templation('./directory/'))
+      .use(new Templation('./directory/', '.jade', 'templation'))
       .compile('./out.js')
 
-Optionally, an object can be specified as a second argument to the constructor to tweak the module's behavior. It's keys are:
+The second and third parameters are optional, they refer to:
 
-- `ext` - Extensions to filter the scanning by (defaults to '.html')
-- `name` - Plugin name setting the name of the domain and the data key if they are exported (defaults to 'templation').
+- 2) Extensions to filter the scanning by (defaults to '.html')
+- 3) Plugin name setting the name of the domain and the data key if they are exported (defaults to 'templation').
 
 
 ## Behavior
