@@ -12,7 +12,7 @@
     "node": "~0.4.10"
   },
   "dependencies": {
-    "fsx": ">= 1.0.0"
+    "fsx": "~1.0.1"
   },
   "devDependencies": {}
 }
