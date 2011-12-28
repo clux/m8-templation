@@ -32,7 +32,7 @@ Plugin.prototype.data = function () {
   return vobj;
 };
 
-module.exports = Plugin;
+exports.Plugin = Plugin;
 
 if (module === require.main) {
   var tdir = '/home/clux/repos/deathmatchjs/public/tmpl/';
