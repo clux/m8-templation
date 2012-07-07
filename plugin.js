@@ -7,7 +7,7 @@ function Plugin(template_dir, ext, name) {
   this.template_dir = template_dir;
   this.ext = ext || '.html';
   this.name = name || 'templation';
-  if (!path.existsSync(template_dir)) {
+  if (!fs.existsSync(template_dir)) {
     throw new Error("need a valid template directory " + template_dir);
   }
 }
